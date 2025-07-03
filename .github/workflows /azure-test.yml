@@ -29,7 +29,7 @@ jobs:
         uses: azure/arm-deploy@v2
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          resourceGroupName: <YOUR-RESOURCE-GROUP>
+          resourceGroupName: test
           template: infra/main.bicep
           parameters: infra/parameters.json   # optional
 
