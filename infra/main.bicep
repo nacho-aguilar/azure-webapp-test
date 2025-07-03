@@ -14,7 +14,7 @@ resource plan 'Microsoft.Web/serverfarms@2022-03-01' = {
   name: planName
   location: resourceGroup().location
   kind: 'linux'
-  sku: { name: 'B1', tier: 'Basic' }
+  sku: { name: 'S1', tier: 'Standard' }
   properties: { reserved: true }
 }
 
