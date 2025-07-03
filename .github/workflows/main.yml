@@ -14,6 +14,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    environment:
+      name: 'Deployment'
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
