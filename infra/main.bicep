@@ -25,7 +25,7 @@ resource webapp 'Microsoft.Web/sites@2022-03-01' = {
   properties: {
     serverFarmId: plan.id
     siteConfig: {
-      linuxFxVersion: 'DOCKER|${acr.name}.azurecr.io/${webAppName}:${dockerImageTag}'
+      linuxFxVersion: 'DOCKER|${acrName}.azurecr.io/${webAppName}:${dockerImageTag}'
       appSettings: [
         { name: 'WEBSITES_PORT', value: '80' }
         // { name: 'YOUR_SECRET', value: 'value' }    # add more as needed
