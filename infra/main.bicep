@@ -1,6 +1,6 @@
 param acrName string = 'testingazure'
 param webAppName string = 'testingazurewebapp${uniqueString(resourceGroup().id)}'
-param planName string = 'testingazurewebapp-free'
+param planName string = 'testingazurewebapp-basic1'
 param dockerImageTag string = 'latest'
 
 resource acr 'Microsoft.ContainerRegistry/registries@2023-01-01-preview' = {
