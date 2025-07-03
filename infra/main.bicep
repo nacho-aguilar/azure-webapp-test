@@ -1,5 +1,5 @@
 param acrName string = 'testingazure'
-param webAppName string = 'testingazurewebapp'
+param webAppName string = 'testingazurewebapp${uniqueString(resourceGroup().id)}'
 param planName string = 'testingazurewebapp-free'
 param dockerImageTag string = 'latest'
 
