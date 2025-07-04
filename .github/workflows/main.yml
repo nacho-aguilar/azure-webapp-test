@@ -35,6 +35,10 @@ jobs:
           resourceGroupName: test
           template: infra/main.bicep
 
+      - name: Login to ACR with OIDC
+        uses: azure/docker-login@v2
+        with:
+          login-server: testingazure-anf9bqgudqczdpea.azurecr.io
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
