@@ -1,4 +1,4 @@
-param acrLoginServer string = 'testingazure-anf9bqgudqczdpea.azurecr.io'
+param acrLoginServer string = 'testingazure-anf9bqgudqczdpea'
 param acrName string = 'testingazure'
 param webAppName string = 'testingazurewebapp${uniqueString(resourceGroup().id)}'
 param planName string = 'testingazurewebapp-basic1'
