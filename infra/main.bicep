@@ -41,7 +41,7 @@ resource webapp 'Microsoft.Web/sites@2022-03-01' = {
 }
 
 resource acrPull 'Microsoft.Authorization/roleAssignments@2020-04-01-preview' = {
-  name: guid(acr.id, webapp.identity.principalId, 'acrpull')
+  name: guid(acr.id, webapp.id, 'acrpull')
   scope: acr
   properties: {
     principalId: webapp.identity.principalId
