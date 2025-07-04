@@ -1,4 +1,4 @@
-param acrName string = 'testingazure-anf9bqgudqczdpea'
+param acrName string = 'testingazure'
 param webAppName string = 'testingazurewebapp${uniqueString(resourceGroup().id)}'
 param planName string = 'testingazurewebapp-basic1'
 param dockerImageTag string = 'latest'
@@ -25,7 +25,7 @@ resource webapp 'Microsoft.Web/sites@2022-03-01' = {
   properties: {
     serverFarmId: plan.id
     siteConfig: {
-      linuxFxVersion: 'DOCKER|${acrName}.azurecr.io/${webAppName}:${dockerImageTag}'
+      linuxFxVersion: 'DOCKER|${acrName}-anf9bqgudqczdpea.azurecr.io/${webAppName}:${dockerImageTag}'
       appSettings: [
         { name: 'WEBSITES_PORT', value: '80' }
         // { name: 'YOUR_SECRET', value: 'value' }    # add more as needed
