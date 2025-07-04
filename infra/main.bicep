@@ -39,17 +39,3 @@ resource webapp 'Microsoft.Web/sites@2022-03-01' = {
     httpsOnly: true
   }
 }
-
-resource acrPull 'Microsoft.Authorization/roleAssignments@2020-04-01-preview' = {
-  name: guid(acr.id, webapp.id, 'acrpull')
-  scope: acr
-  properties: {
-    principalId: webapp.identity.principalId
-    roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '7f951dda-4ed3-4680-a7ca-43fe172d538d')
-    principalType: 'ServicePrincipal'
-  }
-  dependsOn: [
-    acr
-    webapp
-  ]
-}
