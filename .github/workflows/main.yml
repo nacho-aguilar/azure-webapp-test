@@ -34,3 +34,11 @@ jobs:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           resourceGroupName: test
           template: infra/main.bicep
+
+      
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: testingazure-anf9bqgudqczdpea.azurecr.io/testingazurewebapp7claivvixsf4w:latest
